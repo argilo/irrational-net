@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using the Raspberry Pi's serial port
-date: '2012-04-19 08:38:18 -0400'
+date: 2012-04-19 08:38:18 -0400
 ---
 <p>The stock Debian image for the Raspberry Pi uses the UART as a serial console.  I was able to connect to it from my Ubuntu laptop via my <a href="https://www.adafruit.com/products/70">3.3-volt USB FTDI TTL-232 cable</a>.  I connected Raspberry Pi's ground pin to the ground pin of the FTDI, the Rasberry Pi's TX pin to the FTDI's RX pin and vice versa.  (The Raspberry Pi's pinout is available <a href="http://elinux.org/RPi_Low-level_peripherals">here</a>.)  Then on my Ubuntu laptop I installed minicom (<code>sudo apt-get install minicom</code>) and fired it up with:</p>
 <blockquote><p><code>minicom -b 115200 -o -D /dev/ttyUSB0</code></p></blockquote>
