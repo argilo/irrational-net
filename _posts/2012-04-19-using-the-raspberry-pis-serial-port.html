@@ -1,0 +1,39 @@
+---
+layout: post
+status: publish
+published: true
+title: Using the Raspberry Pi's serial port
+author:
+  display_name: argilo
+  login: argilo
+  email: argilo@gmail.com
+  url: ''
+author_login: argilo
+author_email: argilo@gmail.com
+wordpress_id: 79
+wordpress_url: http://www.irrational.net/?p=79
+date: '2012-04-19 08:38:18 -0400'
+date_gmt: '2012-04-19 12:38:18 -0400'
+---
+<p>The stock Debian image for the Raspberry Pi uses the UART as a serial console.  I was able to connect to it from my Ubuntu laptop via my <a href="https://www.adafruit.com/products/70">3.3-volt USB FTDI TTL-232 cable</a>.  I connected Raspberry Pi's ground pin to the ground pin of the FTDI, the Rasberry Pi's TX pin to the FTDI's RX pin and vice versa.  (The Raspberry Pi's pinout is available <a href="http://elinux.org/RPi_Low-level_peripherals">here</a>.)  Then on my Ubuntu laptop I installed minicom (<code>sudo apt-get install minicom</code>) and fired it up with:</p>
+<blockquote><p><code>minicom -b 115200 -o -D /dev/ttyUSB0</code></p></blockquote>
+<p>After typing in a username, I got a password prompt and was able to log in.  Also, the serial console allowed me to see all the kernel output during boot, which could be handy someday.</p>
+<p>But I wanted to use the Raspberry Pi's UART for my own purposes, not as a serial console.  To achieve that, I did the following.</p>
+<p>First, I made a backup of the /boot/cmdline.txt file, which contains the kernel parameters:</p>
+<blockquote><p><code>sudo cp /boot/cmdline.txt /boot/cmdline_backup.txt</code></p></blockquote>
+<p>Then I edited it:</p>
+<blockquote><p><code>sudo vi /boot/cmdline.txt</code></p></blockquote>
+<p>Originally it contained:</p>
+<blockquote><p><code>dwc_otg.lpm_enable=0 rpitestmode=1 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 rootwait</code></p></blockquote>
+<p>I deleted the two parameters involving the serial port (<code>ttyAMA0</code>) to get the following:</p>
+<blockquote><p><code>dwc_otg.lpm_enable=0 rpitestmode=1 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 rootwait</code></p></blockquote>
+<p>I rebooted (<code>sudo reboot</code>) to confirm that kernel output was no longer going to the serial port.  But the serial console was still available.  So I edited /etc/inittab:</p>
+<blockquote><p><code>sudo vi /etc/inittab</code></p></blockquote>
+<p>I commented out the following line:</p>
+<blockquote><p><code>2:23:respawn:/sbin/getty -L ttyAMA0 115200 vt100</code></p></blockquote>
+<p>Finally, I rebooted again and confirmed that nothing was touching the serial port anymore.  Then, to test it out I installed minicom on the Raspberry Pi:</p>
+<blockquote><p><code>sudo apt-get install minicom</code></p></blockquote>
+<p>And ran it:</p>
+<blockquote><p><code>minicom -b 115200 -o -D /dev/ttyAMA0</code></p></blockquote>
+<p>After firing up minicom on my Ubuntu laptop again, I was able to send data in both directions!</p>
+<p>Now to get the Raspberry Pi talking to an Arduino...</p>

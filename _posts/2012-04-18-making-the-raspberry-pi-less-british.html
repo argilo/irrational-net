@@ -1,0 +1,34 @@
+---
+layout: post
+status: publish
+published: true
+title: Making the Raspberry Pi a little less British
+author:
+  display_name: argilo
+  login: argilo
+  email: argilo@gmail.com
+  url: ''
+author_login: argilo
+author_email: argilo@gmail.com
+wordpress_id: 67
+wordpress_url: http://www.irrational.net/?p=67
+date: '2012-04-18 19:24:48 -0400'
+date_gmt: '2012-04-18 23:24:48 -0400'
+---
+<p><img src="/wp-content/uploads/2012/04/wpid-IMG_20120418_192251.jpg" alt="Raspberry Pi" /></p>
+<p>After a month and a half of obsessively checking for status updates, I finally received my <a href="http://www.raspberrypi.org/">Raspberry Pi</a> yesterday.  I love it!</p>
+<p>The first thing I noticed after booting up the stock Debian image was that things are set up for British users.  Most annoyingly, the symbols on the keyboard weren't where I expected them to be.  To arrive at a more Canadian configuration, I did the following.</p>
+<p>First, I changed the system locale, turning off <code>en_GB.UTF-8</code> and turning on <code>en_CA.UTF-8</code>:</p>
+<blockquote><p><code>sudo dpkg-reconfigure locales</code></p></blockquote>
+<p>Next, I changed the keyboard layout:</p>
+<blockquote><p><code>sudo dpkg-reconfigure keyboard-configuration</code></p></blockquote>
+<p>Next, I changed the time zone:</p>
+<blockquote><p><code>sudo dpkg-reconfigure tzdata</code></p></blockquote>
+<p>And finally, I changed to a Canadian Debian mirror by editing the "sources.list" file:</p>
+<blockquote><p><code>sudo vi /etc/apt/sources.list</code></p></blockquote>
+<p>On the first line, I changed "ftp.uk.debian.org" to "ftp.ca.debian.org":</p>
+<blockquote><p><code>deb http://ftp.ca.debian.org/debian/ squeeze main</p>
+<p># Nokia Qt5 development<br />
+deb http://archive.qmh-project.org/rpi/debian/ unstable main</code></p></blockquote>
+<p>After rebooting (<code>sudo reboot</code>) and updating my package list (<code>sudo apt-get update</code>) I had a pleasantly Canadian Pi.  :-)</p>
+<p>UPDATE: <a href="http://rohankapoor.com/">Rohan Kapoor</a> has turned these instructions into an excellent tutorial with lots of screenshots: <a href="http://rohankapoor.com/2012/04/americanizing-the-raspberry-pi/">"Americanizing" the Raspberry Pi</a>. I highly recommend it if you're a beginner having trouble following my instructions.</p>

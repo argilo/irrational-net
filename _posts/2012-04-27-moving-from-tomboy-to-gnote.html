@@ -1,0 +1,26 @@
+---
+layout: post
+status: publish
+published: true
+title: Moving from Tomboy to Gnote in Ubuntu 12.04
+author:
+  display_name: argilo
+  login: argilo
+  email: argilo@gmail.com
+  url: ''
+author_login: argilo
+author_email: argilo@gmail.com
+wordpress_id: 87
+wordpress_url: http://www.irrational.net/?p=87
+date: '2012-04-27 21:50:04 -0400'
+date_gmt: '2012-04-28 01:50:04 -0400'
+---
+<p><img src="/wp-content/uploads/2012/04/gnote-tray.png" alt="Gnote in the tray" /></p>
+<p>Yesterday I updated from Ubuntu 10.04 to 12.04.  As usual, I did a completely fresh install, only copying over the things I still need.  Tomboy is at the top of that list, so I copied over my <code>~/.local/share/tomboy/</code> directory.  I read that Gnote is now the preferred replacement for Tomboy, so I installed it and was pleased to see that it read in my Tomboy notes automatically.  But it didn't put an icon in my tray, and that was my favourite Tomboy feature.  To get the tray icon back, I did the following:</p>
+<p>Fisrt, I added gnote to the systray whitelist:</p>
+<blockquote><p><code>gsettings set com.canonical.Unity.Panel systray-whitelist "['JavaEmbeddedFrame', 'Wine', 'Update-notifier', 'gnote']"</code></p></blockquote>
+<p>Next, I set Gnote to auto-start:</p>
+<blockquote><p><code>mkdir ~/.config/autostart<br />
+cp /usr/share/applications/gnote.desktop ~/.config/autostart/<br />
+chmod u+x ~/.config/autostart/gnote.desktop</code></p></blockquote>
+<p>Finally, I turned on the tray icon in Gnote itself: Edit &rarr; Preferences &rarr; Use Status Icon.  After logging out and back in, Gnote started up in the tray just the way Tomboy used to.</p>
