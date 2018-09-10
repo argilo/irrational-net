@@ -4,8 +4,14 @@ title: Compiz on my Inspiron 5100
 date: 2007-11-17 04:02:24 -0500
 permalink: /:year/:month/:day/:title/
 ---
-<p>My laptop is an Inspiron 5100, and for the longest time I couldn't figure out how to get "Desktop Effects" (compiz) going in Ubuntu.  I didn't think my video card (Radeon Mobility 7500) was compatible, but it turns out it is.  I just needed to change a couple settings.</p>
-<p>First, I put the following in <code>/etc/drirc</code>:</p>
-<blockquote><p><code>&lt;option name="allow_large_textures" value="2" /&gt;</code></p></blockquote>
-<p>Then, in <code>/etc/X11/xorg.conf</code> I changed my <code>DefaultDepth</code> from <code>24</code> to <code>16</code>.  Finally, I restarted X with Ctrl-Alt-Backspace, and enabled compiz in System --&gt; Preferences --&gt; Appearance --&gt; Visual Effects.  Voila!</p>
-<p>I found these instructions <a href="https://lists.ubuntu.com/archives/ubuntu-users/2007-October/124547.html">here</a>.</p>
+My laptop is an Inspiron 5100, and for the longest time I couldn't figure out how to get "Desktop Effects" (compiz) going in Ubuntu.  I didn't think my video card (Radeon Mobility 7500) was compatible, but it turns out it is.  I just needed to change a couple settings.
+
+First, I put the following in `/etc/drirc`:
+
+```
+<option name="allow_large_textures" value="2" />
+```
+
+Then, in `/etc/X11/xorg.conf` I changed my `DefaultDepth` from `24` to `16`.  Finally, I restarted X with Ctrl-Alt-Backspace, and enabled compiz in System → Preferences → Appearance → Visual Effects.  Voila!
+
+I found these instructions [here](https://lists.ubuntu.com/archives/ubuntu-users/2007-October/124611.html).
