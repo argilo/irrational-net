@@ -2,6 +2,7 @@
 layout: post
 title: Tracking planes for $20 or less
 date: 2012-08-06 19:44:28 -0400
+permalink: /:year/:month/:day/:title/
 ---
 <p>My new favourite toy is a cheap $20 USB TV tuner.  It's made to receive DVB-T signals, which aren't even used in North America.  So what use could I possibly have for it?</p>
 <p>Back in February, Linux kernel developer Antti Palosaari <a href="http://thread.gmane.org/gmane.linux.drivers.video-input-infrastructure/44461/focus=44461http://">discovered</a> that certain USB TV tuners can be configured to send the raw, unprocessed radio signal straight to the computer for decoding in software.  (They use this mode when tuning FM or DAB radio signals.  Think of it as the <a href="http://en.wikipedia.org/wiki/Softmodem">Winmodem</a> approach to radio.)  Palosaari realized that by running the right software, almost any radio signal could be received by these tuners.  Not long thereafter, the <a href="http://sdr.osmocom.org/trac/wiki/rtl-sdr">RTL-SDR</a> project was born, allowing these tuners to be used in Linux.</p>

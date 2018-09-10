@@ -2,6 +2,7 @@
 layout: post
 title: Reverse engineering a ceiling fan
 date: 2014-03-22 23:31:32 -0400
+permalink: /:year/:month/:day/:title/
 ---
 <p>Tonight I was visiting a friend of mine, and noticed a strange looking switch on the wall. My friend explained that it was a wireless controller for his ceiling fan.  Since we're both radio geeks, and I happened to have my <a href="http://nuand.com/">BladeRF</a> with me, I got the idea to reverse engineer it.</p>
 <p>The first step was to figure out what frequency the controller was transmitting on.  The BladeRF makes that a fairly easy task, since it has a bandwidth of 28 MHz.  I fired up <a href="http://gqrx.dk/">gqrx</a> to get a nice waterfall view of all that bandwidth.  My first guess was that the signal might be on the 902-928 MHz band, and sure enough, I spotted a signal popping up at 911.24 MHz whenever I pressed a button on the controller.  But it was quite weak, which led me to suspect it might be a harmonic.  Indeed, when I tuned lower I found a very strong signal at 303.747 MHz, and I could easily detect it from across the room.</p>

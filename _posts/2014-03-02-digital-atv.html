@@ -2,6 +2,7 @@
 layout: post
 title: Digital amateur TV on 70cm, 33cm and 23cm
 date: 2014-03-02 00:12:52 -0500
+permalink: /:year/:month/:day/:title/
 ---
 <p>I love my <a href="http://nuand.com/">BladeRF</a>! It's a very versatile SDR transceiver, and I've used it to receive and transmit all sorts of signals. Most recently I got it transmitting DVB-T digital television signals on the amateur radio bands, with my trusty <a href="http://www.nooelec.com/store/software-defined-radio/sdr-receivers/tv28tv2-sdr-dvb-t-usb-stick-set.html">NooElec TV28T</a> serving as the receiver. (It is a TV tuner, after all, so why not use it as one for once?) In this post, I'll show you how to replicate what I've done.</p>
 <p>First off, you'll need two laptops running Linux: one to transmit, and one to receive. The transmit laptop needs to have the latest version of <a href="http://gnuradio.org/">GNU Radio</a> installed. If you're running Ubuntu, the easiest way to get that done is to use <a href="https://launchpad.net/~gqrx/+archive/snapshots">OZ9AEC's package archive</a>. At a command prompt, run the following:</p>
