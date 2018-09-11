@@ -20,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   My name is Clayton Smith. I'm an amateur radio operator (call sign VE3IRR),
   Esperanto speaker, computer security researcher, and hardware hacker.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://irrational.net" # the base hostname & protocol for your site, e.g. http://example.com
 show_excerpts: true
 excerpt_separator: <!--more-->
 github_username: argilo
