@@ -4,7 +4,7 @@ title: Making the Raspberry Pi a little less British
 date: 2012-04-18 19:24:48 -0400
 permalink: /:year/:month/:day/:title/
 ---
-![Raspberry Pi](/wp-content/uploads/2012/04/wpid-IMG_20120418_192251.jpg)
+![Raspberry Pi](/images/raspberry-pi.jpg)
 
 After a month and a half of obsessively checking for status updates, I finally received my [Raspberry Pi](https://www.raspberrypi.org/) yesterday.  I love it!
 

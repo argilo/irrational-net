@@ -12,11 +12,11 @@ The next step was to check what modulation scheme the controller used. Most simp
 
 I knew my trusty RTL-SDR dongle would be more than capable of receiving and demodulating the signal, so I threw together a very simple GNU Radio flow graph to show me the amplitude of the 303.747 MHz signal over time:
 
-![ceiling-fan-rx-flowgraph](/wp-content/uploads/2014/03/ceiling-fan-rx-flowgraph.png)
+![ceiling-fan-rx-flowgraph](/images/ceiling-fan-rx-flowgraph.png)
 
 Here's what I saw on the scope, once I set it to trigger on a rising edge and pressed the "light" button on the ceiling fan controller:
 
-![ceiling-fan-ask](/wp-content/uploads/2014/03/ceiling-fan-ask.png)
+![ceiling-fan-ask](/images/ceiling-fan-ask.png)
 
 The transmission was short enough that I could just read the bits off visually: 1011011001011001001001001001001001011. And by measuring the time from the start to the end of those bits, I worked out that the symbol rate was about 3211 baud.
 
@@ -34,7 +34,7 @@ The bits were repeated for as long as a button was held, with about another 37 b
 
 Given this information, it was trivial to build a flow graph to transmit an on-off keying signal using the BladeRF:
 
-![ceiling-fan-tx-flowgraph](/wp-content/uploads/2014/03/ceiling-fan-tx-flowgraph.png)
+![ceiling-fan-tx-flowgraph](/images/ceiling-fan-tx-flowgraph.png)
 
 My first attempt was unsuccessful, but it turned out the problem was just that the output gain wasn't set high enough.  Bringing it up to about 15 dB was sufficient to reliably control the ceiling fan!
 

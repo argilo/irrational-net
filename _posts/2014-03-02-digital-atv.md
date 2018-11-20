@@ -55,9 +55,9 @@ avconv -f alsa -i pulse -f video4linux2 -s 640x480 -i /dev/video0 -vf drawtext=f
 
 You may need to install additional packages so that avconv has access to all the codecs it needs.  If all goes well, your two terminal windows should look like this:
 
-![dvbt-tx-script](/wp-content/uploads/2014/03/dvbt-tx-script.png)
+![dvbt-tx-script](/images/dvbt-tx-script.png)
 
-![dvbt-tx-avconv](/wp-content/uploads/2014/03/dvbt-tx-avconv.png)
+![dvbt-tx-avconv](/images/dvbt-tx-avconv.png)
 
 Now, over to the receiving laptop, which will use an RTL-SDR dongle to pick up the signal.  Since support for the RTL2832 chip was only recently added to the Linux kernel, you'll want to be running a recent Linux distribution such as Ubuntu 13.10.  Make sure you have vlc installed:
 
@@ -73,7 +73,7 @@ vlc dvb://frequency=441000000:bandwidth=6
 
 If all goes well, you'll see your video and hear your audio!
 
-![dvbt-tx-ve3irr](/wp-content/uploads/2014/03/dvbt-tx-ve3irr.png)
+![dvbt-tx-ve3irr](/images/dvbt-tx-ve3irr.png)
 
 Now that you've succeeded on the 70cm band, you may want to try this on the 33cm and 23cm bands as well. Unfortunately, the Linux drivers for the RTL-SDR dongle currently limit its maximum frequency to 862 MHz, a bit below the 33cm band. Until the drivers get updated (I've already submitted a patch request), you can work around the problem by patching the kernel modules on your receiving laptop using the dvb-freq-fix.py script in my sdr-examples repository:
 

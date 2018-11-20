@@ -70,6 +70,6 @@ uhd_modes.py --rtlsdr --kml=planes.kml
 1. In Google Earth, select "Network Link" from the "Add" menu.  Enter "Planes" in the "Name" field, then click the Browse button next to the "Link" field and choose the "planes.kml" file in the file chooser.  Click on the "Refresh" tab and set a time-based refresh to occur periodically with a frequency of 5 seconds.  Click "OK", then zoom in to your location.  With any luck, you should see some planes start to appear and move around!
 1. To see more details about a plane, click the "X" that appears on the map.  Or go to the "Places" section in the left sidebar and expand "Planes" and "Aircraft locations".
 Here's a screenshot of Air Canada flight 839 coming in for a landing at YOW, with several more planes at cruising altitude in the background:
-![Screenshot of gr-air-modes in Google Earth](/wp-content/uploads/2012/08/Screenshot-from-2012-08-06-145315.png)
+![Screenshot of gr-air-modes in Google Earth](/images/adsb-google-earth.png)
 
 I hope you find this tutorial useful, and that you'll do more exploring with software-defined radio once you've succeeded in watching planes!

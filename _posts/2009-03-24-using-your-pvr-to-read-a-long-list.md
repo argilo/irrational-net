@@ -8,4 +8,4 @@ Tonight I watched the season finale of the Rick Mercer Report.  It was a pretty 
 
 Here's a screen capture for your amusement:
 
-![screenshot of the Rick Mercer Report](/wp-content/uploads/2009/03/mercer-list.jpg)
+![screenshot of the Rick Mercer Report](/images/mercer-list.jpg)
