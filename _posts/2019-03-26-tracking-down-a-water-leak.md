@@ -50,7 +50,7 @@ plt.show()
 ```
 Here's the result after a week collecting packets:
 
-![Pyplot output showing a week of water usage](images/water-leak.png)
+![Pyplot output showing a week of water usage](/images/water-leak.png)
 
 During the first few days, I observed that water was consumed at about 0.05 m³ every five hours even when I was away from home, suggesting that the leak was about 10 litres per hour. I turned off the input values to my toilets, and the next day the reading stayed constant all day. The flappers in two of the toilets had warped with age, and replacing them brought water consumption back to normal.
 
