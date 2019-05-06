@@ -38,7 +38,7 @@ for line in open('usage.txt'):
     measurement_time = time.replace(minute=0, second=0, microsecond=0)
     consumption = int(result[3]) / 100
 
-    if time != last_time:
+    if measurement_time != last_time:
         times.append(measurement_time)
         usages.append(consumption)
         last_time = measurement_time
