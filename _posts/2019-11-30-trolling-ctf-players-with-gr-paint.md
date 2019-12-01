@@ -20,7 +20,7 @@ Fortunately, there are other tools which are designed for offline signal analysi
 
 ![aoeu](/images/paint-baudline.png)
 
-So how did I build this challeng? I needed two things: a way to distort an image so it would become thinner and thinner at one end, and a way to paint that image onto the radio spectrum.
+So how did I build this challenge? I needed two things: a way to distort an image so it would become thinner and thinner at one end, and a way to paint that image onto the radio spectrum.
 
 To produce the distorted image, I used ImageMagick's [FX special effects image operator](https://imagemagick.org/script/fx.php), which allows the user to define an arbitrary mapping between input pixels and output pixels. After some experimentation, I found that transforming the *y* axis using an exponential function worked best:
 
