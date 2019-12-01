@@ -14,7 +14,7 @@ At this point it seemed as though you just had to patiently wait for the rest of
 
 ![aoeu](/images/paint-end.png)
 
-By the end, the letters were much to small to read in Gqrx, even when the FFT rate was increased to the maximum of 60 fps!
+By the end, the letters were much too small to read in Gqrx, even when the FFT rate was increased to the maximum of 60 fps!
 
 Fortunately, there are other tools which are designed for offline signal analysis, and which allow the user to have a much closer look a short, bursty signals. My favourites are [Inspectrum](https://github.com/miek/inspectrum) and [Baudline](https://www.baudline.com/). After capturing the signal to a file with Gqrx's "Record and play I/Q data" button, it was easy to read off the tail end of the flag with Baudline:
 
