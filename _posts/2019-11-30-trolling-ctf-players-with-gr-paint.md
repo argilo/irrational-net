@@ -8,17 +8,17 @@ BSides Ottawa took place on November 28 & 29, and this year's CTF was the bigges
 
 My favourite radio challenge was called "Waterfall". When players tuned to 924.5 MHz, they saw the BSides Ottawa logo painted onto the waterfall, followed by the start of a flag:
 
-![aoeu](/images/paint-begin.png)
+![Gqrx screenshot 1](/images/paint-begin.png)
 
 At this point it seemed as though you just had to patiently wait for the rest of the flag to scroll by. But as time went on, the letters in the flag got smaller, and smaller, and smaller:
 
-![aoeu](/images/paint-end.png)
+![Gqrx screenshot 2](/images/paint-end.png)
 
 By the end, the letters were much too small to read in Gqrx, even when the FFT rate was increased to the maximum of 60 fps!
 
 Fortunately, there are other tools which are designed for offline signal analysis, and which allow the user to have a much closer look at short, bursty signals. My favourites are [Inspectrum](https://github.com/miek/inspectrum) and [Baudline](https://www.baudline.com/). After capturing the signal to a file with Gqrx's "Record and play I/Q data" button, it was easy to read off the tail end of the flag with Baudline:
 
-![aoeu](/images/paint-baudline.png)
+![Baudline screenshot](/images/paint-baudline.png)
 
 So how did I build this challenge? I needed two things: a way to distort an image so it would become thinner and thinner at one end, and a way to paint that image onto the radio spectrum.
 
