@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Building a frequency hopping challenge
+title: Building a frequency hopping CTF challenge
 date: 2019-12-02 21:19:00 -0500
 permalink: /:year/:month/:day/:title/
 ---
