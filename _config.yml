@@ -27,7 +27,9 @@ header_pages:
   - about.md
 github_username: argilo
 linkedin_username: argilo
-twitter_username: argilo
+mastodon:
+  - username: argilo
+    instance: mastodon.online
 
 # Build settings
 markdown: kramdown
